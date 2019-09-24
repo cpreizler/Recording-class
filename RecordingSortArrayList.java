@@ -1,16 +1,16 @@
 package spring2019;
-import java.util.*; //needed for scanner and array list
+import java.util.*; 
 public class RecordingSortArrayList {
 
 		public static void main (String[] args) {
 			Scanner input=new Scanner(System.in); 
 			ArrayList<Recording> recArrList=new ArrayList <Recording>(); 
-			getUserRecs(input, recArrList); //call method that gets recording input from user and puts it in the array
+			getUserRecs(input, recArrList); 
 			int stop=0;
-			do { //run this until the user wishes to stop
+			do { 
 				int orderChoice=getUserOrderChoice(input); 
 				int sortChoice=getUserSortChoice(input); 
-				switch (orderChoice) //call the appropriate sort methods based on which one the user chose
+				switch (orderChoice) 
 				{
 				case 1: ascSort(recArrList,sortChoice);
 						break;
@@ -18,15 +18,15 @@ public class RecordingSortArrayList {
 				}
 				displaySortedList(recArrList);
 				System.out.println("To select a different sort enter any number except 1, to stop enter 1: ");
-				stop=input.nextInt(); //allow user to stop
+				stop=input.nextInt(); 
 			} while(stop!=1);
 			input.close();
 		}
 
-		public static void getUserRecs (Scanner input, ArrayList<Recording> recList) { //puts user input in the recording array list
+		public static void getUserRecs (Scanner input, ArrayList<Recording> recList) { 
 			System.out.println("This program allows you to keep records of 5 recordings played and will sort them according to your preference.");
-			for (int i=0; i<5; i++) { //set a for loop to input the values for the 5 recordings
-				Recording record=new Recording(); //create new Recording object
+			for (int i=0; i<5; i++) { 
+				Recording record=new Recording(); 
 				System.out.println("Please enter the title of recording #" + (i+1) + ": ");
 				String title=input.nextLine(); 
 				System.out.println("Please enter the artist of recording #" + (i+1) + ": ");

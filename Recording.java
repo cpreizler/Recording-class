@@ -7,20 +7,20 @@ public class Recording {
 	private String artist;
 	private double playingTime; 
 	
-	public Recording () { //no args constructor, initializes each variable to either null or 0
+	public Recording () { 
 		
-		this (null, null, 0); //invokes the constructor with all the validation code		
+		this (null, null, 0); 	
 	}
 	
-	public Recording (String title) { //accepts just the title as a param and defaults the rest to null/0
+	public Recording (String title) { 
 		this (title, null, 0); 
 	}
 	
-	public Recording (String title, String artist) { //accepts title and author and defaults time to 0
+	public Recording (String title, String artist) { 
 		this (title, artist, 0);
 	}
 	
-	public Recording (String title, String artist, double playingTime) { //Big mama constructor with all the logic
+	public Recording (String title, String artist, double playingTime) { 
 		if (playingTime<0)
 			throw new IllegalArgumentException("Playing time must be atleast 0 seconds");
 		this.title=title;
@@ -28,7 +28,6 @@ public class Recording {
 		this.playingTime=playingTime;
 	}
 	
-	//COPY constructor, makes a deep copy of a Recording object
 	public Recording (Recording rec) {
 		this(rec.getTitle(), rec.getArtist(),rec.getTime());
 	}
@@ -72,7 +71,7 @@ public class Recording {
 		return playingTime;
 	}
 	
-	//to string method, returns all of the objects field values in a string
+
 	@Override
 	public String toString() {
 		StringBuilder record=new StringBuilder();
@@ -81,7 +80,7 @@ public class Recording {
 	}
 	
 	@Override
-	public boolean equals (Object rec) { //overriding equals method to check more than just addresses but field values as well
+	public boolean equals (Object rec) { 
 		if (this==rec)
 			return true;
 		if (rec==null)
@@ -95,6 +94,8 @@ public class Recording {
 			return false;
 		if (playingTime!=second.getTime())
 			return false;
-		return true; //only returns true if all fields of the object are equal
+		return true; 
 	}
+	
+	
 }
